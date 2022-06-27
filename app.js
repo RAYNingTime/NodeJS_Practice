@@ -2,8 +2,10 @@
 // Modules - Encapsulated Code (only share minimum)
 const names = require('./4-names');
 const sayHi = require('./5-utils');
-
+const object = require('./6-alternative-flavor');
 
 sayHi('susan');
 sayHi(names.john);
 sayHi(names.peter);
+
+console.log(object);
