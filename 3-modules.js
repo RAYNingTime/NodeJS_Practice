@@ -6,6 +6,6 @@ const object = require('./6-alternative-flavor');
 
 require('./7-mind-grenade')
 
-// sayHi('susan');
-// sayHi(names.john);
-// sayHi(names.peter);
+sayHi('susan');
+sayHi(names.john);
+sayHi(names.peter);
