@@ -1,6 +1,6 @@
 //started operating system process
 console.log('first');
-//setTimeout - Asyncronous (offloaded)
+//setTimeout - Syncronous (offloaded)
 setTimeout(() => {
 	console.log('second');
 }, 0);
