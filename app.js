@@ -7,7 +7,7 @@ http
 		// res.end(text);
 
 		//In the first method we are sending data as one big file
-		//While in the second we are sending data by chanks
+		//While in the second we are sending data by chunks
 
 		const fileStream = fs.createReadStream('./content/big.txt','utf8');
 		fileStream.on('open', () => {
