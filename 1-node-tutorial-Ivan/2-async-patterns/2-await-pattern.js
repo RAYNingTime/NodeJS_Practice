@@ -1,15 +1,17 @@
-const { readFile, writeFile} = require('fs').promises;
+const { readFile, writeFile } = require("fs").promises;
 
-const start = async() =>{
-	try{
-		const first = await readFile('./content/first.txt','utf8');
-		const second = await readFile('./content/second.txt','utf8');
-		await writeFile('./content/result-mind-grenade.txt',`THIS IS AWESOME: ${first} \n${second}`)
-	} catch (error) {
-		console.log(error);
-	}
-}
-
+const start = async () => {
+  try {
+    const first = await readFile("./content/first.txt", "utf8");
+    const second = await readFile("./content/second.txt", "utf8");
+    await writeFile(
+      "./content/result-mind-grenade.txt",
+      `THIS IS AWESOME: ${first} \n${second}`
+    );
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 start();
 
@@ -20,7 +22,6 @@ start();
 // const readFilePromise = util.promisify(readFile);
 // const writeFilePromise = util.promisify(writeFile);
 
-
 // const start = async() =>{
 // 	try{
 // 		const first = await readFilePromise('./content/first.txt','utf8');
@@ -30,7 +31,6 @@ start();
 // 		console.log(error);
 // 	}
 // }
-
 
 // start();
 
@@ -49,7 +49,6 @@ start();
 // 		});
 // 	})
 // }
-
 
 // getText('./content/first.txt')
 // 	.then(result => console.log(result))
