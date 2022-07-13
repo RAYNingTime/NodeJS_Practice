@@ -17,14 +17,6 @@ exports.checkID = (req, res, next, val) => {
   next();
 };
 
-// Create a checkBody middleware
-// Check if body contains the name and price property
-// If not, send back 400 (bad request)
-// Add it to the post handler stack
-
-// Assume function is called middleware
-// .post(middleware, tourController.createTour);
-
 exports.checkBody = (req, res, next) => {
   if (!req.body.name || !req.body.price) {
     return res.status(400).json({
