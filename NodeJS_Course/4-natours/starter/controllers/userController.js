@@ -1,4 +1,4 @@
-const fs = require('fs');
+// const fs = require('fs');
 
 exports.getAllUsers = (req, res) => {
   res.status(500).json({
