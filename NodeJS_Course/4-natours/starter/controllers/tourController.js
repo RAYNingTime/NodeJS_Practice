@@ -30,7 +30,7 @@ exports.getAllTours = async (req, res) => {
       //sort('price ratingsAverage')
       // 127.0.0.1:3000/api/v1/tours?sort=-price,ratingsAverage
     } else {
-      query = query.sort('-createdAt');
+      query = query.sort('_id');
     }
 
     // 3) Field limiting
@@ -41,6 +41,17 @@ exports.getAllTours = async (req, res) => {
       query = query.select('-__v');
     }
 
+    // 4) Pagination
+    const page = req.query.page * 1 || 1;
+    const limit = req.query.limit * 1 || 100;
+    const skip = (page - 1) * limit;
+    // ?page=2&limit=10, 1-10 page 1, 11-20 page 2...
+    query = query.skip(skip).limit(limit);
+
+    if (req.query.page) {
+      const numTours = await Tour.countDocuments();
+      if (skip >= numTours) throw new Error('This page does not exists');
+    }
     //EXECUTE QUERY
     const tours = await query;
 
