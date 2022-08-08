@@ -64,7 +64,6 @@ app.use((req, res, next) => {
 });
 
 // 2) ROUTES
-
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 
